@@ -7,6 +7,237 @@
 
     <!-- Le styles -->
     <style type="text/css">
+	    /* base: https://github.com/twitter/bootstrap */
+	    article,
+	    aside,
+	    details,
+	    figcaption,
+	    figure,
+	    footer,
+	    header,
+	    hgroup,
+	    nav,
+	    section {
+	    	display: block;
+	    }
+
+	    html {
+	    	font-size: 100%;
+	    	-webkit-text-size-adjust: 100%;
+	    	-ms-text-size-adjust: 100%;
+	    }
+
+	    a:focus {
+	    	outline: thin dotted #333;
+	    	outline: 5px auto -webkit-focus-ring-color;
+	    	outline-offset: -2px;
+	    }
+
+	    a:hover,
+	    a:active {
+	    	outline: 0;
+	    }
+
+	    sub,
+	    sup {
+	    	position: relative;
+	    	font-size: 75%;
+	    	line-height: 0;
+	    	vertical-align: baseline;
+	    }
+
+	    sup {
+	    	top: -0.5em;
+	    }
+
+	    sub {
+	    	bottom: -0.25em;
+	    }
+	    body {
+	    	margin: 0;
+	    	font-family: Garamond, Georgia, Times, "Times New Roman", serif;
+	    	font-size: 16px;
+	    	line-height: 140%;
+	    	color: #333333;
+	    	background: #BBBFC7;
+	    	padding: 0 10%;
+	    }
+
+	    a {
+	    	color: #0088cc;
+	    	text-decoration: none;
+	    }
+
+	    a:hover {
+	    	color: #005580;
+	    	text-decoration: underline;
+	    }
+	    p {
+	    	margin: 0 0 9px;
+	    	color: #000;
+	    }
+
+	    p small {
+	    	font-size: 11px;
+	    	color: #999999;
+	    }
+
+	    h1,
+	    h2,
+	    h3,
+	    h4,
+	    h5,
+	    h6 {
+	    	margin: 0;
+	    	font-family: inherit;
+	    	font-weight: normal;
+	    	color: inherit;
+	    	text-rendering: optimizelegibility;
+	    }
+
+	    h1 {
+	    	font-size: 60px;
+	    	line-height: 60px;
+	    	color: #999;
+	    	margin-bottom: 1em;
+	    }
+
+	    h2 {
+	    	font-size: 30px;
+	    	line-height: 36px;
+	    	color: #999;
+	    	margin-bottom: .5em;
+	    }
+
+	    h3 {
+	    	font-size: 20px;
+	    	line-height: 30px;
+	    }
+
+	    h4,
+	    h5,
+	    h6 {
+	    	line-height: 18px;
+	    }
+
+	    h4 {
+	    	font-size: 14px;
+	    }
+
+	    h5 {
+	    	font-size: 12px;
+	    }
+
+	    h6 {
+	    	font-size: 11px;
+	    	color: #999999;
+	    	text-transform: uppercase;
+	    }
+
+	    ul,
+	    ol {
+	    	padding: 0;
+	    	margin: 0 0 9px 0;
+	    }
+
+	    ul ul,
+	    ul ol,
+	    ol ol,
+	    ol ul {
+	    	margin-bottom: 0;
+	    	margin-left: 1em;
+	    }
+	    ol ol ol {
+	    	margin-left: 2em;
+	    }
+
+
+	    ul {
+	    	list-style: disc;
+	    }
+
+	    ol {
+	    	counter-reset: section;
+	    	list-style-type: none;
+	    }
+
+	    ol li {
+	    	counter-increment: section;
+	    	display: block;
+	    }
+
+	    section > ol > li {
+	    	margin-top: 2.5em;
+	    }
+
+	    ol li > h3 {
+	    	display: inline;
+	    	font-weight: bold;
+	    }
+
+	    ol li:before  { 
+	    	content: counters(section, ".") ". "; 
+	    }
+
+	    ol ol {
+	    	margin-top: .3em;
+	    }
+
+	    ol ol li {
+	    	margin-bottom: .8em;
+	    }
+
+	    li {
+	    	line-height: 160%;
+	    }
+
+	    .container {
+	    	background: #fff;
+	    	border: 1px solid #fefefe;
+	    	border-radius: 1px;
+	    	margin: 10px auto;
+	    	padding: 5%;
+	    	max-width: 960px;
+	    	box-shadow: 0 0 36px rgba(0, 0, 0, 0.2);
+	    }
+
+	    #alert-colab {
+	    	background: #FEFFF2;
+	    	border-radius: 6px;
+	    	padding: .5em;
+	    }
+
+	    footer {
+	    	font-size: 13px;
+	    	text-align: center;
+	    	padding: 1em 0 3em;
+	    }
+
+	    /* Print */
+	    @media print {
+	    	.no-print {
+	    		display: none;
+	    	}
+
+		    body {
+		    	color: #000;
+		    	font-size: 14px;
+		    	line-height: 130%;
+		    	padding: 0;
+		    }
+
+		    .container {
+		    	background: #fff;
+		    	border: 0;
+		    	border-radius: none;
+		    	margin: none;
+		    	padding: none;
+		    	max-width: auto;
+		    	box-shadow: none;
+		    }
+
+		}
+
     </style>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -20,9 +251,11 @@
 
 		<h1>Briefing</h1>
 
-		<section>
+		<section id="alert-colab" class="no-print" title="Caso imprima, esse alerta não sairá no impresso.">
 			<h2>Questionário Colaborativo</h2>
-			<p>Muitas das respostas você consegue já no primeiro contato por telefone ou e-mail, portanto cuidado para não repetí-las ao enviar o questionário ou aplicar em uma entrevista.</p>			
+			<p><a href="https://github.com/rodrigomuniz/briefing-colab">Contribua no Github</a> ‧ <a href="http://rodrigomuniz.com/blog/modelo-questionario-briefing-colaborativo-para-websites/">Leia o post</a></p>			
+
+			<p>Fique atento para adaptar o questionário ao tipo de projeto, nem todas as perguntas precisam ser feitas para determinado tipo de projeto. E muitas das respostas você consegue já no primeiro contato por telefone ou e-mail, portanto cuidado para não repetí-las ao enviar o questionário ou aplicar em uma entrevista/reunião.</p>			
 		</section>
 
 		<section>
@@ -31,15 +264,17 @@
 					<h3>Objetivos</h3>
 					<ol>
 						<li>O que se pretende com o site? Qual o objetivo principal?</li>
-						<li>Haverá qual tipo de interação com o usuário?</li>
+						<li>Será um site institucional, vendas, informativo, redesign, hotsite ou uma coisa muito louca do outro 
+mundo?</li>
+						<li>Haverá que tipo de interação com o usuário?</li>
 					</ol>
 				</li><!-- 1 -->
 				<li>
 					<h3>Cliente/empresa/produtos/serviço</h3>
 					<ol>
 						<li>Qual o nome da empresa?</li>
-						<li>É (a) empresa, (b) produto, (c) serviço?
-							<ol class="alpha">
+						<li>É (1) empresa, (2) produto, (3) serviço?
+							<ol>
 								<li>É uma filial ou matriz?</li>
 								<li>Produto offline/físico ou virtual</li>
 								<li>Serviço offline ou virtual?</li>
@@ -112,7 +347,7 @@
 					<ol>
 						<li>Tem idéias para diferenciar o site dos outros em relação a conteúdo e posicionamento?</li>
 					</ol>
-				</li>
+				</li><!-- 8 -->
 			</ol>
 		</section>
 		
